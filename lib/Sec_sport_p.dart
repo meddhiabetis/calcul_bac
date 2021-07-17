@@ -1,3 +1,4 @@
+import 'package:calcul_bac/main.dart';
 import 'package:flutter/material.dart';
 
 class SecSport extends StatefulWidget {
@@ -49,9 +50,10 @@ class _SecSportState extends State<SecSport> {
                 fr * 1.5 +
                 ar +
                 phi * 1.5 +
-                opt +
+                (opt - 10) +
                 sprt) /
             14.5;
+      moy = double.parse((mo).toStringAsFixed(2));
       sco = 4 * moy +
           sprt * 0.5 +
           ((spth * 0.5 + sppr * 2.5) / 3) * 1.5 +
@@ -59,18 +61,18 @@ class _SecSportState extends State<SecSport> {
           ang +
           fr +
           0.5 * phi;
-      moy = double.parse((mo).toStringAsFixed(2));
+
       score = double.parse((sco).toStringAsFixed(2));
     });
   }
 
   Widget _mathIn() {
     return TextFormField(
-      style: TextStyle(color: Colors.yellow[100]),
+      style: TextStyle(color: inputTextColor),
       textInputAction: TextInputAction.next,
       decoration: InputDecoration(
         filled: true,
-        fillColor: Colors.grey[800],
+        fillColor: fillColor,
         labelText: 'Math',
         labelStyle: TextStyle(
             color: Colors.grey[400], fontSize: 20, fontStyle: FontStyle.italic),
@@ -111,11 +113,11 @@ class _SecSportState extends State<SecSport> {
 
   Widget _phyIn() {
     return TextFormField(
-      style: TextStyle(color: Colors.yellow[100]),
+      style: TextStyle(color: inputTextColor),
       textInputAction: TextInputAction.next,
       decoration: InputDecoration(
         filled: true,
-        fillColor: Colors.grey[800],
+        fillColor: fillColor,
         labelText: 'Physique',
         labelStyle: TextStyle(
             color: Colors.grey[400], fontSize: 20, fontStyle: FontStyle.italic),
@@ -156,11 +158,11 @@ class _SecSportState extends State<SecSport> {
 
   Widget _spprIn() {
     return TextFormField(
-      style: TextStyle(color: Colors.yellow[100]),
+      style: TextStyle(color: inputTextColor),
       textInputAction: TextInputAction.next,
       decoration: InputDecoration(
         filled: true,
-        fillColor: Colors.grey[800],
+        fillColor: fillColor,
         labelText: 'Sport Pratique',
         labelStyle: TextStyle(
             color: Colors.grey[400], fontSize: 20, fontStyle: FontStyle.italic),
@@ -201,11 +203,11 @@ class _SecSportState extends State<SecSport> {
 
   Widget _spthIn() {
     return TextFormField(
-      style: TextStyle(color: Colors.yellow[100]),
+      style: TextStyle(color: inputTextColor),
       textInputAction: TextInputAction.next,
       decoration: InputDecoration(
         filled: true,
-        fillColor: Colors.grey[800],
+        fillColor: fillColor,
         labelText: 'Sport Théorique',
         labelStyle: TextStyle(
             color: Colors.grey[400], fontSize: 20, fontStyle: FontStyle.italic),
@@ -246,12 +248,12 @@ class _SecSportState extends State<SecSport> {
 
   Widget _scIn() {
     return TextFormField(
-      style: TextStyle(color: Colors.yellow[100]),
+      style: TextStyle(color: inputTextColor),
       textInputAction: TextInputAction.next,
       decoration: InputDecoration(
         filled: true,
-        fillColor: Colors.grey[800],
-        labelText: 'SVT',
+        fillColor: fillColor,
+        labelText: 'Science Biologique',
         labelStyle: TextStyle(
             color: Colors.grey[400], fontSize: 20, fontStyle: FontStyle.italic),
         border: OutlineInputBorder(
@@ -291,11 +293,11 @@ class _SecSportState extends State<SecSport> {
 
   Widget _arIn() {
     return TextFormField(
-      style: TextStyle(color: Colors.yellow[100]),
+      style: TextStyle(color: inputTextColor),
       textInputAction: TextInputAction.next,
       decoration: InputDecoration(
         filled: true,
-        fillColor: Colors.grey[800],
+        fillColor: fillColor,
         labelText: 'Arabe',
         labelStyle: TextStyle(
             color: Colors.grey[400], fontSize: 20, fontStyle: FontStyle.italic),
@@ -336,11 +338,11 @@ class _SecSportState extends State<SecSport> {
 
   Widget _frIn() {
     return TextFormField(
-      style: TextStyle(color: Colors.yellow[100]),
+      style: TextStyle(color: inputTextColor),
       textInputAction: TextInputAction.next,
       decoration: InputDecoration(
         filled: true,
-        fillColor: Colors.grey[800],
+        fillColor: fillColor,
         labelText: 'Français',
         labelStyle: TextStyle(
             color: Colors.grey[400], fontSize: 20, fontStyle: FontStyle.italic),
@@ -381,11 +383,11 @@ class _SecSportState extends State<SecSport> {
 
   Widget _anIn() {
     return TextFormField(
-      style: TextStyle(color: Colors.yellow[100]),
+      style: TextStyle(color: inputTextColor),
       textInputAction: TextInputAction.next,
       decoration: InputDecoration(
         filled: true,
-        fillColor: Colors.grey[800],
+        fillColor: fillColor,
         labelText: 'Anglais',
         labelStyle: TextStyle(
             color: Colors.grey[400], fontSize: 20, fontStyle: FontStyle.italic),
@@ -426,11 +428,11 @@ class _SecSportState extends State<SecSport> {
 
   Widget _phiIn() {
     return TextFormField(
-      style: TextStyle(color: Colors.yellow[100]),
+      style: TextStyle(color: inputTextColor),
       textInputAction: TextInputAction.next,
       decoration: InputDecoration(
         filled: true,
-        fillColor: Colors.grey[800],
+        fillColor: fillColor,
         labelText: 'Philosophie',
         labelStyle: TextStyle(
             color: Colors.grey[400], fontSize: 20, fontStyle: FontStyle.italic),
@@ -471,11 +473,11 @@ class _SecSportState extends State<SecSport> {
 
   Widget _optIn() {
     return TextFormField(
-      style: TextStyle(color: Colors.yellow[100]),
+      style: TextStyle(color: inputTextColor),
       textInputAction: TextInputAction.next,
       decoration: InputDecoration(
         filled: true,
-        fillColor: Colors.grey[800],
+        fillColor: fillColor,
         labelText: 'Option',
         labelStyle: TextStyle(
             color: Colors.grey[400], fontSize: 20, fontStyle: FontStyle.italic),
@@ -516,11 +518,11 @@ class _SecSportState extends State<SecSport> {
 
   Widget _sprtIn() {
     return TextFormField(
-      style: TextStyle(color: Colors.yellow[100]),
+      style: TextStyle(color: inputTextColor),
       textInputAction: TextInputAction.next,
       decoration: InputDecoration(
         filled: true,
-        fillColor: Colors.grey[800],
+        fillColor: fillColor,
         labelText: 'Education Physique',
         labelStyle: TextStyle(
             color: Colors.grey[400], fontSize: 20, fontStyle: FontStyle.italic),
@@ -564,10 +566,14 @@ class _SecSportState extends State<SecSport> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Section Sport '),
+        centerTitle: true,
+        title: Text(
+          'Section Sport ',
+          style: appBarTextStyle,
+        ),
         backgroundColor: Colors.cyanAccent[400],
       ),
-      backgroundColor: Colors.grey[850],
+      backgroundColor: backgroundColour,
       body: SingleChildScrollView(
         child: Container(
           margin: EdgeInsets.all(24),

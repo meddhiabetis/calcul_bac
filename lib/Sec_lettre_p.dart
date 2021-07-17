@@ -1,3 +1,4 @@
+import 'package:calcul_bac/main.dart';
 import 'package:flutter/material.dart';
 
 class SecLettre extends StatefulWidget {
@@ -32,7 +33,7 @@ class _SecLettreState extends State<SecLettre> {
                 3 * ang +
                 3 * fr +
                 isl +
-                opt +
+                (opt - 10) +
                 sprt) /
             20;
       } else
@@ -45,19 +46,20 @@ class _SecLettreState extends State<SecLettre> {
                 isl +
                 sprt) /
             20;
-      sco = 4 * mo + 1.5 * ar + 1.5 * phi + hisgeo + fr + ang;
+
       moy = double.parse((mo).toStringAsFixed(2));
+      sco = 4 * mo + 1.5 * ar + 1.5 * phi + hisgeo + fr + ang;
       score = double.parse((sco).toStringAsFixed(2));
     });
   }
 
   Widget _islIn() {
     return TextFormField(
-      style: TextStyle(color: Colors.yellow[100]),
+      style: TextStyle(color: inputTextColor),
       textInputAction: TextInputAction.next,
       decoration: InputDecoration(
         filled: true,
-        fillColor: Colors.grey[800],
+        fillColor: fillColor,
         labelText: 'Pensée islamique',
         labelStyle: TextStyle(
             color: Colors.grey[400], fontSize: 20, fontStyle: FontStyle.italic),
@@ -98,12 +100,12 @@ class _SecLettreState extends State<SecLettre> {
 
   Widget _hisgeoIn() {
     return TextFormField(
-      style: TextStyle(color: Colors.yellow[100]),
+      style: TextStyle(color: inputTextColor),
       textInputAction: TextInputAction.next,
       decoration: InputDecoration(
         filled: true,
-        fillColor: Colors.grey[800],
-        labelText: 'Physique',
+        fillColor: fillColor,
+        labelText: 'Histoire Geo',
         labelStyle: TextStyle(
             color: Colors.grey[400], fontSize: 20, fontStyle: FontStyle.italic),
         border: OutlineInputBorder(
@@ -143,11 +145,11 @@ class _SecLettreState extends State<SecLettre> {
 
   Widget _infIn() {
     return TextFormField(
-      style: TextStyle(color: Colors.yellow[100]),
+      style: TextStyle(color: inputTextColor),
       textInputAction: TextInputAction.next,
       decoration: InputDecoration(
         filled: true,
-        fillColor: Colors.grey[800],
+        fillColor: fillColor,
         labelText: 'Informatique',
         labelStyle: TextStyle(
             color: Colors.grey[400], fontSize: 20, fontStyle: FontStyle.italic),
@@ -188,11 +190,11 @@ class _SecLettreState extends State<SecLettre> {
 
   Widget _arIn() {
     return TextFormField(
-      style: TextStyle(color: Colors.yellow[100]),
+      style: TextStyle(color: inputTextColor),
       textInputAction: TextInputAction.next,
       decoration: InputDecoration(
         filled: true,
-        fillColor: Colors.grey[800],
+        fillColor: fillColor,
         labelText: 'Arabe',
         labelStyle: TextStyle(
             color: Colors.grey[400], fontSize: 20, fontStyle: FontStyle.italic),
@@ -233,11 +235,11 @@ class _SecLettreState extends State<SecLettre> {
 
   Widget _frIn() {
     return TextFormField(
-      style: TextStyle(color: Colors.yellow[100]),
+      style: TextStyle(color: inputTextColor),
       textInputAction: TextInputAction.next,
       decoration: InputDecoration(
         filled: true,
-        fillColor: Colors.grey[800],
+        fillColor: fillColor,
         labelText: 'Français',
         labelStyle: TextStyle(
             color: Colors.grey[400], fontSize: 20, fontStyle: FontStyle.italic),
@@ -278,11 +280,11 @@ class _SecLettreState extends State<SecLettre> {
 
   Widget _anIn() {
     return TextFormField(
-      style: TextStyle(color: Colors.yellow[100]),
+      style: TextStyle(color: inputTextColor),
       textInputAction: TextInputAction.next,
       decoration: InputDecoration(
         filled: true,
-        fillColor: Colors.grey[800],
+        fillColor: fillColor,
         labelText: 'Anglais',
         labelStyle: TextStyle(
             color: Colors.grey[400], fontSize: 20, fontStyle: FontStyle.italic),
@@ -323,11 +325,11 @@ class _SecLettreState extends State<SecLettre> {
 
   Widget _phiIn() {
     return TextFormField(
-      style: TextStyle(color: Colors.yellow[100]),
+      style: TextStyle(color: inputTextColor),
       textInputAction: TextInputAction.next,
       decoration: InputDecoration(
         filled: true,
-        fillColor: Colors.grey[800],
+        fillColor: fillColor,
         labelText: 'Philosophie',
         labelStyle: TextStyle(
             color: Colors.grey[400], fontSize: 20, fontStyle: FontStyle.italic),
@@ -368,11 +370,11 @@ class _SecLettreState extends State<SecLettre> {
 
   Widget _optIn() {
     return TextFormField(
-      style: TextStyle(color: Colors.yellow[100]),
+      style: TextStyle(color: inputTextColor),
       textInputAction: TextInputAction.next,
       decoration: InputDecoration(
         filled: true,
-        fillColor: Colors.grey[800],
+        fillColor: fillColor,
         labelText: 'Option',
         labelStyle: TextStyle(
             color: Colors.grey[400], fontSize: 20, fontStyle: FontStyle.italic),
@@ -413,11 +415,11 @@ class _SecLettreState extends State<SecLettre> {
 
   Widget _sprtIn() {
     return TextFormField(
-      style: TextStyle(color: Colors.yellow[100]),
+      style: TextStyle(color: inputTextColor),
       textInputAction: TextInputAction.next,
       decoration: InputDecoration(
         filled: true,
-        fillColor: Colors.grey[800],
+        fillColor: fillColor,
         labelText: 'Sport',
         labelStyle: TextStyle(
             color: Colors.grey[400], fontSize: 20, fontStyle: FontStyle.italic),
@@ -461,10 +463,14 @@ class _SecLettreState extends State<SecLettre> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Section Lettre '),
+        centerTitle: true,
+        title: Text(
+          'Section Lettre ',
+          style: appBarTextStyle,
+        ),
         backgroundColor: Colors.brown,
       ),
-      backgroundColor: Colors.grey[850],
+      backgroundColor: backgroundColour,
       body: SingleChildScrollView(
         child: Container(
           margin: EdgeInsets.all(24),

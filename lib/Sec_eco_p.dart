@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:calcul_bac/main.dart';
 
 class SecEco extends StatefulWidget {
   SecEco({Key key}) : super(key: key);
@@ -37,7 +38,7 @@ class _SecEcoState extends State<SecEco> {
                 ar +
                 phi +
                 sprt +
-                opt) /
+                (opt - 10)) /
             17;
       } else
         mo = (math * 2 +
@@ -51,6 +52,7 @@ class _SecEcoState extends State<SecEco> {
                 phi +
                 sprt) /
             17;
+      moy = double.parse((mo).toStringAsFixed(2));
       sco = 4 * moy +
           1.5 * ges +
           1.5 * eco +
@@ -58,18 +60,18 @@ class _SecEcoState extends State<SecEco> {
           0.5 * hisgeo +
           ang +
           fr;
-      moy = double.parse((mo).toStringAsFixed(2));
+
       score = double.parse((sco).toStringAsFixed(2));
     });
   }
 
   Widget _mathIn() {
     return TextFormField(
-      style: TextStyle(color: Colors.yellow[100]),
+      style: TextStyle(color: inputTextColor),
       textInputAction: TextInputAction.next,
       decoration: InputDecoration(
         filled: true,
-        fillColor: Colors.grey[800],
+        fillColor: fillColor,
         labelText: 'Math',
         labelStyle: TextStyle(
             color: Colors.grey[400], fontSize: 20, fontStyle: FontStyle.italic),
@@ -110,11 +112,11 @@ class _SecEcoState extends State<SecEco> {
 
   Widget _ecoIn() {
     return TextFormField(
-      style: TextStyle(color: Colors.yellow[100]),
+      style: TextStyle(color: inputTextColor),
       textInputAction: TextInputAction.next,
       decoration: InputDecoration(
         filled: true,
-        fillColor: Colors.grey[800],
+        fillColor: fillColor,
         labelText: 'Economie',
         labelStyle: TextStyle(
             color: Colors.grey[400], fontSize: 20, fontStyle: FontStyle.italic),
@@ -155,11 +157,11 @@ class _SecEcoState extends State<SecEco> {
 
   Widget _infIn() {
     return TextFormField(
-      style: TextStyle(color: Colors.yellow[100]),
+      style: TextStyle(color: inputTextColor),
       textInputAction: TextInputAction.next,
       decoration: InputDecoration(
         filled: true,
-        fillColor: Colors.grey[800],
+        fillColor: fillColor,
         labelText: 'Informatique',
         labelStyle: TextStyle(
             color: Colors.grey[400], fontSize: 20, fontStyle: FontStyle.italic),
@@ -200,11 +202,11 @@ class _SecEcoState extends State<SecEco> {
 
   Widget _gesIn() {
     return TextFormField(
-      style: TextStyle(color: Colors.yellow[100]),
+      style: TextStyle(color: inputTextColor),
       textInputAction: TextInputAction.next,
       decoration: InputDecoration(
         filled: true,
-        fillColor: Colors.grey[800],
+        fillColor: fillColor,
         labelText: 'Gestion',
         labelStyle: TextStyle(
             color: Colors.grey[400], fontSize: 20, fontStyle: FontStyle.italic),
@@ -245,11 +247,11 @@ class _SecEcoState extends State<SecEco> {
 
   Widget _hisgeoIn() {
     return TextFormField(
-      style: TextStyle(color: Colors.yellow[100]),
+      style: TextStyle(color: inputTextColor),
       textInputAction: TextInputAction.next,
       decoration: InputDecoration(
         filled: true,
-        fillColor: Colors.grey[800],
+        fillColor: fillColor,
         labelText: 'Histoire et Geographie',
         labelStyle: TextStyle(
             color: Colors.grey[400], fontSize: 20, fontStyle: FontStyle.italic),
@@ -290,11 +292,11 @@ class _SecEcoState extends State<SecEco> {
 
   Widget _arIn() {
     return TextFormField(
-      style: TextStyle(color: Colors.yellow[100]),
+      style: TextStyle(color: inputTextColor),
       textInputAction: TextInputAction.next,
       decoration: InputDecoration(
         filled: true,
-        fillColor: Colors.grey[800],
+        fillColor: fillColor,
         labelText: 'Arabe',
         labelStyle: TextStyle(
             color: Colors.grey[400], fontSize: 20, fontStyle: FontStyle.italic),
@@ -335,11 +337,11 @@ class _SecEcoState extends State<SecEco> {
 
   Widget _frIn() {
     return TextFormField(
-      style: TextStyle(color: Colors.yellow[100]),
+      style: TextStyle(color: inputTextColor),
       textInputAction: TextInputAction.next,
       decoration: InputDecoration(
         filled: true,
-        fillColor: Colors.grey[800],
+        fillColor: fillColor,
         labelText: 'Français',
         labelStyle: TextStyle(
             color: Colors.grey[400], fontSize: 20, fontStyle: FontStyle.italic),
@@ -380,11 +382,11 @@ class _SecEcoState extends State<SecEco> {
 
   Widget _anIn() {
     return TextFormField(
-      style: TextStyle(color: Colors.yellow[100]),
+      style: TextStyle(color: inputTextColor),
       textInputAction: TextInputAction.next,
       decoration: InputDecoration(
         filled: true,
-        fillColor: Colors.grey[800],
+        fillColor: fillColor,
         labelText: 'Anglais',
         labelStyle: TextStyle(
             color: Colors.grey[400], fontSize: 20, fontStyle: FontStyle.italic),
@@ -425,11 +427,11 @@ class _SecEcoState extends State<SecEco> {
 
   Widget _phiIn() {
     return TextFormField(
-      style: TextStyle(color: Colors.yellow[100]),
+      style: TextStyle(color: inputTextColor),
       textInputAction: TextInputAction.next,
       decoration: InputDecoration(
         filled: true,
-        fillColor: Colors.grey[800],
+        fillColor: fillColor,
         labelText: 'Philosophie',
         labelStyle: TextStyle(
             color: Colors.grey[400], fontSize: 20, fontStyle: FontStyle.italic),
@@ -470,11 +472,11 @@ class _SecEcoState extends State<SecEco> {
 
   Widget _optIn() {
     return TextFormField(
-      style: TextStyle(color: Colors.yellow[100]),
+      style: TextStyle(color: inputTextColor),
       textInputAction: TextInputAction.next,
       decoration: InputDecoration(
         filled: true,
-        fillColor: Colors.grey[800],
+        fillColor: fillColor,
         labelText: 'Option',
         labelStyle: TextStyle(
             color: Colors.grey[400], fontSize: 20, fontStyle: FontStyle.italic),
@@ -515,11 +517,11 @@ class _SecEcoState extends State<SecEco> {
 
   Widget _sprtIn() {
     return TextFormField(
-      style: TextStyle(color: Colors.yellow[100]),
+      style: TextStyle(color: inputTextColor),
       textInputAction: TextInputAction.next,
       decoration: InputDecoration(
         filled: true,
-        fillColor: Colors.grey[800],
+        fillColor: fillColor,
         labelText: 'Sport',
         labelStyle: TextStyle(
             color: Colors.grey[400], fontSize: 20, fontStyle: FontStyle.italic),
@@ -563,10 +565,14 @@ class _SecEcoState extends State<SecEco> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Section Economie Gestion '),
+        centerTitle: true,
+        title: Text(
+          'Section Economie Gestion ',
+          style: TextStyle(fontFamily: 'Pacifico', fontSize: 18),
+        ),
         backgroundColor: Colors.deepPurple[700],
       ),
-      backgroundColor: Colors.grey[850],
+      backgroundColor: backgroundColour,
       body: SingleChildScrollView(
         child: Container(
           margin: EdgeInsets.all(24),

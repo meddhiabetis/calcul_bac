@@ -1,3 +1,4 @@
+import 'package:calcul_bac/main.dart';
 import 'package:flutter/material.dart';
 
 class SecScience extends StatefulWidget {
@@ -34,25 +35,26 @@ class _SecScienceState extends State<SecScience> {
                 fr +
                 ar +
                 phi +
-                opt +
+                (opt - 10) +
                 sprt) /
             17;
       } else
         mo = (math * 3 + phy * 4 + sc * 4 + inf + ang + fr + ar + phi + sprt) /
             17;
-      sco = 4 * moy + math + 1.5 * phy + 1.5 * sc + ang + fr;
+
       moy = double.parse((mo).toStringAsFixed(2));
+      sco = 4 * moy + math + 1.5 * phy + 1.5 * sc + ang + fr;
       score = double.parse((sco).toStringAsFixed(2));
     });
   }
 
   Widget _mathIn() {
     return TextFormField(
-      style: TextStyle(color: Colors.yellow[100]),
+      style: TextStyle(color: inputTextColor),
       textInputAction: TextInputAction.next,
       decoration: InputDecoration(
         filled: true,
-        fillColor: Colors.grey[800],
+        fillColor: fillColor,
         labelText: 'Math',
         labelStyle: TextStyle(
             color: Colors.grey[400], fontSize: 20, fontStyle: FontStyle.italic),
@@ -93,11 +95,11 @@ class _SecScienceState extends State<SecScience> {
 
   Widget _phyIn() {
     return TextFormField(
-      style: TextStyle(color: Colors.yellow[100]),
+      style: TextStyle(color: inputTextColor),
       textInputAction: TextInputAction.next,
       decoration: InputDecoration(
         filled: true,
-        fillColor: Colors.grey[800],
+        fillColor: fillColor,
         labelText: 'Physique',
         labelStyle: TextStyle(
             color: Colors.grey[400], fontSize: 20, fontStyle: FontStyle.italic),
@@ -138,11 +140,11 @@ class _SecScienceState extends State<SecScience> {
 
   Widget _infIn() {
     return TextFormField(
-      style: TextStyle(color: Colors.yellow[100]),
+      style: TextStyle(color: inputTextColor),
       textInputAction: TextInputAction.next,
       decoration: InputDecoration(
         filled: true,
-        fillColor: Colors.grey[800],
+        fillColor: fillColor,
         labelText: 'Informatique',
         labelStyle: TextStyle(
             color: Colors.grey[400], fontSize: 20, fontStyle: FontStyle.italic),
@@ -183,11 +185,11 @@ class _SecScienceState extends State<SecScience> {
 
   Widget _scIn() {
     return TextFormField(
-      style: TextStyle(color: Colors.yellow[100]),
+      style: TextStyle(color: inputTextColor),
       textInputAction: TextInputAction.next,
       decoration: InputDecoration(
         filled: true,
-        fillColor: Colors.grey[800],
+        fillColor: fillColor,
         labelText: 'SVT',
         labelStyle: TextStyle(
             color: Colors.grey[400], fontSize: 20, fontStyle: FontStyle.italic),
@@ -228,11 +230,11 @@ class _SecScienceState extends State<SecScience> {
 
   Widget _arIn() {
     return TextFormField(
-      style: TextStyle(color: Colors.yellow[100]),
+      style: TextStyle(color: inputTextColor),
       textInputAction: TextInputAction.next,
       decoration: InputDecoration(
         filled: true,
-        fillColor: Colors.grey[800],
+        fillColor: fillColor,
         labelText: 'Arabe',
         labelStyle: TextStyle(
             color: Colors.grey[400], fontSize: 20, fontStyle: FontStyle.italic),
@@ -273,11 +275,11 @@ class _SecScienceState extends State<SecScience> {
 
   Widget _frIn() {
     return TextFormField(
-      style: TextStyle(color: Colors.yellow[100]),
+      style: TextStyle(color: inputTextColor),
       textInputAction: TextInputAction.next,
       decoration: InputDecoration(
         filled: true,
-        fillColor: Colors.grey[800],
+        fillColor: fillColor,
         labelText: 'Français',
         labelStyle: TextStyle(
             color: Colors.grey[400], fontSize: 20, fontStyle: FontStyle.italic),
@@ -318,11 +320,11 @@ class _SecScienceState extends State<SecScience> {
 
   Widget _anIn() {
     return TextFormField(
-      style: TextStyle(color: Colors.yellow[100]),
+      style: TextStyle(color: inputTextColor),
       textInputAction: TextInputAction.next,
       decoration: InputDecoration(
         filled: true,
-        fillColor: Colors.grey[800],
+        fillColor: fillColor,
         labelText: 'Anglais',
         labelStyle: TextStyle(
             color: Colors.grey[400], fontSize: 20, fontStyle: FontStyle.italic),
@@ -363,11 +365,11 @@ class _SecScienceState extends State<SecScience> {
 
   Widget _phiIn() {
     return TextFormField(
-      style: TextStyle(color: Colors.yellow[100]),
+      style: TextStyle(color: inputTextColor),
       textInputAction: TextInputAction.next,
       decoration: InputDecoration(
         filled: true,
-        fillColor: Colors.grey[800],
+        fillColor: fillColor,
         labelText: 'Philosophie',
         labelStyle: TextStyle(
             color: Colors.grey[400], fontSize: 20, fontStyle: FontStyle.italic),
@@ -408,11 +410,11 @@ class _SecScienceState extends State<SecScience> {
 
   Widget _optIn() {
     return TextFormField(
-      style: TextStyle(color: Colors.yellow[100]),
+      style: TextStyle(color: inputTextColor),
       textInputAction: TextInputAction.next,
       decoration: InputDecoration(
         filled: true,
-        fillColor: Colors.grey[800],
+        fillColor: fillColor,
         labelText: 'Option',
         labelStyle: TextStyle(
             color: Colors.grey[400], fontSize: 20, fontStyle: FontStyle.italic),
@@ -453,11 +455,11 @@ class _SecScienceState extends State<SecScience> {
 
   Widget _sprtIn() {
     return TextFormField(
-      style: TextStyle(color: Colors.yellow[100]),
+      style: TextStyle(color: inputTextColor),
       textInputAction: TextInputAction.next,
       decoration: InputDecoration(
         filled: true,
-        fillColor: Colors.grey[800],
+        fillColor: fillColor,
         labelText: 'Sport',
         labelStyle: TextStyle(
             color: Colors.grey[400], fontSize: 20, fontStyle: FontStyle.italic),
@@ -501,10 +503,12 @@ class _SecScienceState extends State<SecScience> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Section Science Expérimentale'),
+        centerTitle: true,
+        title: Text('Section Science Expérimentale',
+            style: TextStyle(fontFamily: 'Pacifico', fontSize: 16)),
         backgroundColor: Colors.greenAccent[400],
       ),
-      backgroundColor: Colors.grey[850],
+      backgroundColor: backgroundColour,
       body: SingleChildScrollView(
         child: Container(
           margin: EdgeInsets.all(24),

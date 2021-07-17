@@ -1,3 +1,4 @@
+import 'package:calcul_bac/main.dart';
 import 'package:flutter/material.dart';
 
 class SecMath extends StatefulWidget {
@@ -26,24 +27,33 @@ class _SecMathState extends State<SecMath> {
   void doCalc(math, phy, sc, inf, ang, fr, ar, phi, opt, sprt) {
     setState(() {
       if (opt > 10) {
-        mo =
-            (math * 4 + phy * 4 + sc + inf + ang + fr + ar + phi + opt + sprt) /
-                15;
+        mo = (math * 4 +
+                phy * 4 +
+                sc +
+                inf +
+                ang +
+                fr +
+                ar +
+                phi +
+                (opt - 10) +
+                sprt) /
+            15;
       } else
         mo = (math * 4 + phy * 4 + sc + inf + ang + fr + ar + phi + sprt) / 15;
-      sco = 4 * moy + 2 * math + 1.5 * phy + 0.5 * sc + ang + fr;
+
       moy = double.parse((mo).toStringAsFixed(2));
+      sco = 4 * moy + 2 * math + 1.5 * phy + 0.5 * sc + ang + fr;
       score = double.parse((sco).toStringAsFixed(2));
     });
   }
 
   Widget _mathIn() {
     return TextFormField(
-      style: TextStyle(color: Colors.yellow[100]),
+      style: TextStyle(color: inputTextColor),
       textInputAction: TextInputAction.next,
       decoration: InputDecoration(
         filled: true,
-        fillColor: Colors.grey[800],
+        fillColor: fillColor,
         labelText: 'Math',
         labelStyle: TextStyle(
             color: Colors.grey[400], fontSize: 20, fontStyle: FontStyle.italic),
@@ -84,11 +94,11 @@ class _SecMathState extends State<SecMath> {
 
   Widget _phyIn() {
     return TextFormField(
-      style: TextStyle(color: Colors.yellow[100]),
+      style: TextStyle(color: inputTextColor),
       textInputAction: TextInputAction.next,
       decoration: InputDecoration(
         filled: true,
-        fillColor: Colors.grey[800],
+        fillColor: fillColor,
         labelText: 'Physique',
         labelStyle: TextStyle(
             color: Colors.grey[400], fontSize: 20, fontStyle: FontStyle.italic),
@@ -129,11 +139,11 @@ class _SecMathState extends State<SecMath> {
 
   Widget _infIn() {
     return TextFormField(
-      style: TextStyle(color: Colors.yellow[100]),
+      style: TextStyle(color: inputTextColor),
       textInputAction: TextInputAction.next,
       decoration: InputDecoration(
         filled: true,
-        fillColor: Colors.grey[800],
+        fillColor: fillColor,
         labelText: 'Informatique',
         labelStyle: TextStyle(
             color: Colors.grey[400], fontSize: 20, fontStyle: FontStyle.italic),
@@ -174,11 +184,11 @@ class _SecMathState extends State<SecMath> {
 
   Widget _scIn() {
     return TextFormField(
-      style: TextStyle(color: Colors.yellow[100]),
+      style: TextStyle(color: inputTextColor),
       textInputAction: TextInputAction.next,
       decoration: InputDecoration(
         filled: true,
-        fillColor: Colors.grey[800],
+        fillColor: fillColor,
         labelText: 'SVT',
         labelStyle: TextStyle(
             color: Colors.grey[400], fontSize: 20, fontStyle: FontStyle.italic),
@@ -219,11 +229,11 @@ class _SecMathState extends State<SecMath> {
 
   Widget _arIn() {
     return TextFormField(
-      style: TextStyle(color: Colors.yellow[100]),
+      style: TextStyle(color: inputTextColor),
       textInputAction: TextInputAction.next,
       decoration: InputDecoration(
         filled: true,
-        fillColor: Colors.grey[800],
+        fillColor: fillColor,
         labelText: 'Arabe',
         labelStyle: TextStyle(
             color: Colors.grey[400], fontSize: 20, fontStyle: FontStyle.italic),
@@ -264,11 +274,11 @@ class _SecMathState extends State<SecMath> {
 
   Widget _frIn() {
     return TextFormField(
-      style: TextStyle(color: Colors.yellow[100]),
+      style: TextStyle(color: inputTextColor),
       textInputAction: TextInputAction.next,
       decoration: InputDecoration(
         filled: true,
-        fillColor: Colors.grey[800],
+        fillColor: fillColor,
         labelText: 'Français',
         labelStyle: TextStyle(
             color: Colors.grey[400], fontSize: 20, fontStyle: FontStyle.italic),
@@ -309,11 +319,11 @@ class _SecMathState extends State<SecMath> {
 
   Widget _anIn() {
     return TextFormField(
-      style: TextStyle(color: Colors.yellow[100]),
+      style: TextStyle(color: inputTextColor),
       textInputAction: TextInputAction.next,
       decoration: InputDecoration(
         filled: true,
-        fillColor: Colors.grey[800],
+        fillColor: fillColor,
         labelText: 'Anglais',
         labelStyle: TextStyle(
             color: Colors.grey[400], fontSize: 20, fontStyle: FontStyle.italic),
@@ -354,11 +364,11 @@ class _SecMathState extends State<SecMath> {
 
   Widget _phiIn() {
     return TextFormField(
-      style: TextStyle(color: Colors.yellow[100]),
+      style: TextStyle(color: inputTextColor),
       textInputAction: TextInputAction.next,
       decoration: InputDecoration(
         filled: true,
-        fillColor: Colors.grey[800],
+        fillColor: fillColor,
         labelText: 'Philosophie',
         labelStyle: TextStyle(
             color: Colors.grey[400], fontSize: 20, fontStyle: FontStyle.italic),
@@ -399,11 +409,11 @@ class _SecMathState extends State<SecMath> {
 
   Widget _optIn() {
     return TextFormField(
-      style: TextStyle(color: Colors.yellow[100]),
+      style: TextStyle(color: inputTextColor),
       textInputAction: TextInputAction.next,
       decoration: InputDecoration(
         filled: true,
-        fillColor: Colors.grey[800],
+        fillColor: fillColor,
         labelText: 'Option',
         labelStyle: TextStyle(
             color: Colors.grey[400], fontSize: 20, fontStyle: FontStyle.italic),
@@ -444,11 +454,11 @@ class _SecMathState extends State<SecMath> {
 
   Widget _sprtIn() {
     return TextFormField(
-      style: TextStyle(color: Colors.yellow[100]),
+      style: TextStyle(color: inputTextColor),
       textInputAction: TextInputAction.next,
       decoration: InputDecoration(
         filled: true,
-        fillColor: Colors.grey[800],
+        fillColor: fillColor,
         labelText: 'Sport',
         labelStyle: TextStyle(
             color: Colors.grey[400], fontSize: 20, fontStyle: FontStyle.italic),
@@ -492,7 +502,7 @@ class _SecMathState extends State<SecMath> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(title: Text('Section Math ')),
-      backgroundColor: Colors.grey[850],
+      backgroundColor: backgroundColour,
       body: SingleChildScrollView(
         child: Container(
           margin: EdgeInsets.all(24),
